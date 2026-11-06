@@ -53,8 +53,18 @@ Built a SOC monitoring environment from scratch on Windows Server 2022 and Splun
 
 ## Key Findings
 
-[Summarize the most important alert you triaged, the timeline, and the recommendation from your incident report.]
+## Key Findings
 
+The most significant alert was a [brute-force / privilege escalation] pattern, detected through Event ID [4625 / 4732]. [Describe briefly what you saw, e.g., "Repeated failed logons against the standard user account were followed by a new account being created and added to the Administrators group within 5 minutes."]
+
+**Timeline:**
+- [HH:MM] First failed logon events (4625) from [account]
+- [HH:MM] New account created (4720)
+- [HH:MM] Account added to Administrators (4732)
+
+**Triage result:** [True positive / False positive]. [One sentence on why, e.g., "Activity came from a simulated attack script, confirmed by matching PowerShell execution logs (4104)."]
+
+**Recommendation:** Restrict local administrator group membership, alert on any new account creation outside change windows, and require MFA on privileged accounts.
 ## What I Learned
 
 - Building a SOC environment from scratch with free and open-source tools
